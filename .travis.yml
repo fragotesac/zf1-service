@@ -14,23 +14,14 @@ branches:
   only:
     master
 
-before_install:
-  - travis_retry composer self-update
-
 install:
   - phpenv rehash
   - travis_retry composer install --no-interaction --prefer-source
 
-stages:
-  - phpstan analysis
+script:
+  - composer phpstan
 
 jobs:
   fast_finish: true
   allow_failures:
     - php: nightly
-  include:
-    - stage: phpstan analysis
-      php: 7.1
-      env: TMPDIR=/tmp USE_XDEBUG=false
-      script:
-        - composer phpstan
