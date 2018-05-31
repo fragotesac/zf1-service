@@ -62,4 +62,3 @@ abstract class Zend_Service_Abstract
         return self::$_httpClient;
     }
 }
-
