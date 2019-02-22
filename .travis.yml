@@ -18,16 +18,14 @@ stages:
 
 jobs:
   fast_finish: true
-  allow_failures:
-    - php: nightly
   include:
     - stage: style check
-      php: 7.1
+      php: 7.2
       env: TMPDIR=/tmp USE_XDEBUG=false
       script:
         - composer style-check
     - stage: phpstan analysis
-      php: 7.1
+      php: 7.2
       env: TMPDIR=/tmp USE_XDEBUG=false
       script:
         - composer phpstan
