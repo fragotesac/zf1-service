@@ -2,7 +2,16 @@ language: php
 
 sudo: false
 
-env: TMPDIR=/tmp
+cache:
+  directories:
+    - $HOME/.composer/cache
+    - vendor
+
+env:
+  global:
+    - TMPDIR=/tmp
+    - USE_XDEBUG=false
+    - COMPOSER_DISCARD_CHANGES=1
 
 branches:
   only:
