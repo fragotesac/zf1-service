@@ -41,6 +41,7 @@ abstract class Zend_Service_Abstract
      * is set, the default Zend_Http_Client will be used.
      *
      * @param Zend_Http_Client $httpClient
+     * @return void
      */
     final public static function setHttpClient(Zend_Http_Client $httpClient)
     {
